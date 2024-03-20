@@ -2,9 +2,17 @@ body {
   background-color: rgb(165, 188, 80);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  color: rgb(86, 72, 72);
 }
-.box {
-  height: auto;
+
+* {
+  box-sizing: border-box;
+}
+
+.box,
+.frame,
+.click-area,
+.upgrades {
   background-color: rgb(244, 204, 67);
   border: none;
   border-radius: 10px;
@@ -20,10 +28,8 @@ body {
   flex-grow: 1;
   flex-shrink: 1;
   text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(86, 72, 72);
 }
+
 .title {
   font-size: 40px;
   font-weight: bold;
@@ -33,26 +39,8 @@ body {
   padding: 10px;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: rgb(86, 72, 72);
 }
-a:link {
-  text-decoration: none;
-  color: rgb(86, 72, 72);
-}
-a:visited {
-  text-decoration: none;
-  color: white;
-  border: 5px solid black;
-  background-color: white;
-  border-radius: 50px;
-  padding: 10px;
-  height: auto;
-  width: auto;
-}
-p,
-h3 {
-  color: rgb(86, 72, 72);
-}
+
 .img {
   border-radius: 50px;
   height: 192px;
@@ -60,211 +48,130 @@ h3 {
   padding: 10px;
   width: 192px;
   border: none;
-  transition-duration: 5s;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 0.25s ease;
   transition: all 0.7s ease;
-  position: relative;
-  bottom: auto;
+  cursor: pointer;
 }
+
 .img:hover {
-  transition-duration: 0.7s;
-  transition-property: all;
-  transition-timing-function: ease;
-  transform-style: preliminary-value;
   transform: scale(1.05);
 }
+
 .img:active {
-  animation: bounce 5s;
+  animation: bounce 0.8s;
 }
-.frame {
-  border: none;
-  border-radius: 10px;
-  width: 100%;
-  height: 500px;
-  box-shadow:
-    0 2px 3px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 10px;
-  display: center;
-  justify-content: center;
-  align-items: center;
+
+.parts {
+  font-size: 40px;
+  font-weight: normal;
+  text-align: left;
 }
-#upgrade1,
-#upgrade2,
-#upgrade3 {
-  border-radius: 20px;
-  border: none;
-  background-color: #176baa;
-  color: white;
-  font-size: 20px;
-  width: 175px;
-  font-weight: bold;
-  transition: transform 0.5s;
-  padding: 2px;
-  margin: 2px;
-  display: inline-block;
+
+.pps {
+  text-align: right;
 }
-#upgrade1:hover,
-#upgrade2:hover,
-#upgrade3:hover {
-  transform: translateY(-7px);
-  border: black 5px solid;
-  box-shadow:
-    0 10px 10px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+@keyframes bounce {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale(1.1);
+  }
 }
-hr {
-  border: 5px;
-}
-.upgrades {
-  height: auto;
-  background-color: rgb(244, 204, 67);
-  border: none;
-  border-radius: 10px;
-  box-shadow:
-    0 2px 3px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 5px;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: right;
-  flex-grow: 1;
-  flex-shrink: 1;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
+
+a:link,
+a:visited,
+p,
+h3 {
+  text-decoration: none;
   color: rgb(86, 72, 72);
-  width: 180px;
-  position: absolute;
-  right: 0;
 }
+
+a:visited {
+  border: 5px solid black;
+  color: white;
+  background-color: white;
+  border-radius: 50px;
+  padding: 10px;
+  height: auto;
+  width: auto;
+}
+
+.upgrades,
 .click-area {
   height: 100%;
-  background-color: rgb(244, 204, 67);
-  border: none;
-  border-radius: 10px;
-  box-shadow:
-    0 2px 3px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 5px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-  flex-shrink: 1;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(86, 72, 72);
   width: 235px;
   position: absolute;
+}
+
+.upgrades {
+  right: 0;
+}
+
+.click-area {
   left: 0;
 }
-@keyframes bounce {
-  0% {
-    transform: scale(1, 1);
-  }
-  20% {
-    transform: scale(1.1, 1.1);
-  }
-  40% {
-    transform: scale(1, 1);
-  }
-  60% {
-    transform: scale(1.1, 1.1);
-  }
-  80% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
+
+.frame {
+  width: 100%;
+  height: 500px;
 }
-.parts {
-  position: relative;
-  bottom: auto;
-}
-.pps {
-  position: auto;
-  bottom: 1px;
-}
-#upgrade1-secret {
-  border-radius: 20px;
-  border: none;
-  background-color: #176baa;
-  color: white;
-  font-size: 20px;
-  width: 175px;
-  font-weight: bold;
-  transition: transform 0.5s;
-  padding: 2px;
-  margin: 2px;
-  display: none;
-  border-radius: 50px;
-  height: 192px;
-  margin: 10px;
-  padding: 10px;
-  width: auto;
-  border: none;
-  transition-duration: 5s;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 0.25s ease;
-  transition: all 0.7s ease;
-  position: relative;
-  bottom: 250px;
-}
-#upgrade1-secret:hover {
-  transition-duration: 0.7s;
-  transition-property: all;
-  transition-timing-function: ease;
-  transform-style: preliminary-value;
-  transform: scale(1.05);
-}
-#upgrade1-secret:active {
-  animation: bounce 5s;
-}
+
+#upgrade1,
+#upgrade2,
+#upgrade3,
+#upgrade1-secret,
 #upgrade1-secret-2 {
   border-radius: 20px;
   border: none;
   background-color: #176baa;
   color: white;
   font-size: 20px;
+  width: 175px;
   font-weight: bold;
   transition: transform 0.5s;
   padding: 2px;
   margin: 2px;
+  cursor: pointer;
+}
+
+#upgrade1:hover,
+#upgrade2:hover,
+#upgrade3:hover,
+#upgrade1-secret:hover,
+#upgrade1-secret-2:hover {
+  transform: translateY(-7px);
+  border: black 5px solid;
+  box-shadow:
+    0 10px 10px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#upgrade1-secret {
+  display: none;
+  border-radius: 50px;
+  height: 192px;
+  width: auto;
+  bottom: 250px;
+}
+
+#upgrade1-secret-2 {
   display: block;
   border-radius: 50px;
   height: auto;
-  margin: 10px;
-  padding: 10px;
   width: auto;
-  border: none;
-  transition-duration: 5s;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 0.25s ease;
-  transition: all 0.7s ease;
-  position: relative;
   bottom: 50px;
 }
-#upgrade1-secret-2:hover {
-  transition-duration: 0.7s;
-  transition-property: all;
-  transition-timing-function: ease;
-  transform-style: preliminary-value;
-  transform: scale(1.05);
-}
-#upgrade1-secret-2:active {
-  animation: bounce 5s;
+
+hr {
+  border: 5px;
 }
