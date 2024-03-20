@@ -78,7 +78,7 @@ h3 {
   transform: scale(1.05);
 }
 .img:active {
-  animation: bounce 0.7s;
+  animation: bounce 5s;
 }
 .frame {
   border: none;
