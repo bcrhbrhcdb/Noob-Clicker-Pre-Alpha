@@ -91,3 +91,54 @@ h3 {
   justify-content: center;
   align-items: center;
 }
+#upgrade1,
+#upgrade2,
+#upgrade3 {
+  border-radius: 20px;
+  border: none;
+  background-color: #176baa;
+  color: white;
+  font-size: 20px;
+  width: 175px;
+  font-weight: bold;
+  transition: transform 0.5s;
+  padding: 2px;
+  margin: 2px;
+  display: inline-block;
+}
+#upgrade1:hover,
+#upgrade2:hover,
+#upgrade3:hover {
+  transform: translateY(-7px);
+  border: black 5px solid;
+  box-shadow:
+    0 10px 10px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+hr {
+  border: 5px;
+}
+.upgrades {
+  height: auto;
+  background-color: rgb(244, 204, 67);
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 2px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: right;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(86, 72, 72);
+  width: 180px;
+  position: absolute;
+  right: 0;
+}
