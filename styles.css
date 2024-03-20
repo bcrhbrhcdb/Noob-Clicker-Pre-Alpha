@@ -55,28 +55,30 @@ h3 {
 }
 .img {
   border-radius: 50px;
-  height: 120px;
+  height: 192px;
   margin: 10px;
   padding: 10px;
-  width: 120px;
+  width: 192px;
   border: none;
-  box-shadow:
-    0 2px 3px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   transition-duration: 5s;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   -ms-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  transition: all 0.7s ease;
+  position: relative;
+  bottom: 80px;
 }
 .img:hover {
-  transition-duration: 0.3s;
+  transition-duration: 0.7s;
   transition-property: all;
   transition-timing-function: ease;
   transform-style: preliminary-value;
   transform: scale(1.05);
-  border: 5px solid black;
+}
+.img:active {
+  animation: bounce 0.7s;
 }
 .frame {
   border: none;
@@ -141,4 +143,48 @@ hr {
   width: 180px;
   position: absolute;
   right: 0;
+}
+.click-area {
+  height: 100%;
+  background-color: rgb(244, 204, 67);
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 2px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(86, 72, 72);
+  width: 235px;
+  position: absolute;
+  left: 0;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1);
+  }
+  20% {
+    transform: scale(1.1, 1.1);
+  }
+  40% {
+    transform: scale(1, 1);
+  }
+  60% {
+    transform: scale(1.1, 1.1);
+  }
+  80% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
