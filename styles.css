@@ -121,18 +121,29 @@ p,
 h3 {
   text-decoration: none;
   color: rgb(86, 72, 72);
+  transition: transform 0.5s;
 }
 
 a:visited {
-  border: 5px solid black;
   color: white;
   background-color: white;
   border-radius: 50px;
   padding: 10px;
   height: auto;
   width: auto;
+  transition: transform 0.5s;
 }
-
+a:hover {
+  border: 5px solid black;
+  color: white;
+  height: auto;
+  width: auto;
+  background-color: #176baa;
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 3px;
+  transform: translateY(-7px);
+}
 .upgrades,
 .click-area {
   height: 100%;
