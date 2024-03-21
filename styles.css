@@ -253,3 +253,6 @@ hr {
   height: 100%;
   align-items: center; /* Allows the boxes to take equal space and adjust as per window size */
 }
+.all-content {
+  display: block;
+}
