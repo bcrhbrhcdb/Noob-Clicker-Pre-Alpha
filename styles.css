@@ -75,16 +75,16 @@ body {
   padding: 10px;
   width: 192px;
   border: none;
-  transition: all 0.7s ease;
+  transition: all 1s ease;
   cursor: pointer;
 }
 
 .img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .img:active {
-  animation: bounce 0.8s;
+  animation: bounce 5s;
 }
 
 .parts {
@@ -111,7 +111,7 @@ body {
   50%,
   70%,
   90% {
-    transform: scale(1.1);
+    transform: scale(1.25);
   }
 }
 
@@ -140,12 +140,17 @@ a:visited {
 
 .upgrades {
   right: 0;
+  display: block;
 }
 
 .click-area {
   left: 0;
 }
-
+#upgrade1,
+#upgrade2,
+#upgrade3 {
+  display: block;
+}
 #upgrade1,
 #upgrade2,
 #upgrade3,
