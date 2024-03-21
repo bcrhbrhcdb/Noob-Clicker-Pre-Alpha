@@ -224,3 +224,18 @@ hr {
   margin: auto;
   height: auto;
 }
+.box-3 {
+  background-color: rgb(244, 204, 67);
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 2px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5px;
+  padding: 10px;
+  display: none;
+  text-align: center;
+  width: 100%; /* Allows the boxes to adjust vertically as per content */
+  height: 100%;
+  align-items: center; /* Allows the boxes to take equal space and adjust as per window size */
+}
