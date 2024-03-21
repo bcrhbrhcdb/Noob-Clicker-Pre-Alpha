@@ -195,7 +195,15 @@ hr {
   text-align: center;
   width: 192px;
   position: relative;
-  width: 30% vw; /* Adjust based on your requirement */
+  width: 50px auto; /* Adjust based on your requirement */
   margin: auto;
-  height: 30vh;
+  height: auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  height: auto;
+  padding: 10px;
 }
