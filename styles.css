@@ -120,7 +120,10 @@ a:visited {
 .click-area {
   left: 0;
 }
-
+.click-area,
+.upgrades {
+  width: 235px;
+}
 .frame {
   width: 100%;
   height: 500px;
@@ -192,6 +195,7 @@ hr {
   text-align: center;
   width: 192px;
   position: relative;
-  width: 30% auto; /* Adjust based on your requirement */
+  width: 30% vw; /* Adjust based on your requirement */
   margin: auto;
+  height: 30vh;
 }
