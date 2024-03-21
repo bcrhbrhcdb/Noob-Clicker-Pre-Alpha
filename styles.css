@@ -150,7 +150,8 @@ a:visited {
 #upgrade2,
 #upgrade3,
 #upgrade1-secret,
-#upgrade1-secret-2 {
+#upgrade1-secret-2,
+.normal-button {
   border-radius: 20px;
   border: none;
   background-color: #176baa;
@@ -159,8 +160,8 @@ a:visited {
   width: 175px;
   font-weight: bold;
   transition: transform 0.5s;
-  padding: 2px;
-  margin: 2px;
+  padding: 5px;
+  margin: 3px;
   cursor: pointer;
 }
 
@@ -168,12 +169,14 @@ a:visited {
 #upgrade2:hover,
 #upgrade3:hover,
 #upgrade1-secret:hover,
-#upgrade1-secret-2:hover {
+#upgrade1-secret-2:hover,
+.normal-button:hover {
   transform: translateY(-7px);
   border: black 5px solid;
   box-shadow:
     0 10px 10px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 2px;
 }
 
 #upgrade1-secret {
@@ -184,7 +187,8 @@ a:visited {
   bottom: 250px;
 }
 
-#upgrade1-secret-2 {
+#upgrade1-secret-2,
+.normal-button {
   display: block;
   border-radius: 50px;
   height: auto;
