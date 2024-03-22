@@ -10,3 +10,16 @@ switchClicker.addEventListener("click", function () {
     clickerTwo.style.display = "block";
   }
 });
+
+clickerOne.addEventListener("click", () => {
+  let amountOfParts = document.getElementById("aop");
+  let totalAmountOfParts;
+  amountOfParts.innerHTML++;
+  totalAmountOfParts++;
+});
+clickerTwo.addEventListener("click", () => {
+  let amountOfParts = document.getElementById("aop");
+  let totalAmountOfParts;
+  amountOfParts.innerHTML++;
+  totalAmountOfParts++;
+});
