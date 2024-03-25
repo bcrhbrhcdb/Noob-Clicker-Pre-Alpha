@@ -164,16 +164,26 @@ a:hover {
   left: 0;
 }
 
-#upgrade1,
-#upgrade2,
-#upgrade3 {
+#noobling {
   display: none;
   width: auto;
 }
-
-#upgrade1,
-#upgrade2,
-#upgrade3,
+#nooblit {
+  display: none;
+  width: auto;
+}
+#noob {
+  display: none;
+  width: auto;
+}
+#debug {
+  display: none;
+  width: auto;
+}
+#noobling,
+#nooblit,
+#noob,
+#debug,
 #upgrade1-secret,
 #upgrade1-secret-2,
 .normal-button {
@@ -190,9 +200,10 @@ a:hover {
   cursor: pointer;
 }
 
-#upgrade1:hover,
-#upgrade2:hover,
-#upgrade3:hover,
+#noobling:hover,
+#nooblit:hover,
+#noob:hover,
+#debug:hover,
 #upgrade1-secret:hover,
 #upgrade1-secret-2:hover,
 .normal-button:hover {
@@ -257,4 +268,22 @@ hr {
 
 .all-content {
   display: block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#noobling,
+#nooblit,
+#noob,
+#debug {
+  animation-name: slideIn;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
 }
