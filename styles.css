@@ -167,7 +167,7 @@ a:hover {
 #upgrade1,
 #upgrade2,
 #upgrade3 {
-  display: block;
+  display: none;
   width: auto;
 }
 
