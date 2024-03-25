@@ -1,5 +1,7 @@
 // weird how I do this first, but switch clicker type.
-
+const clickerOne = document.getElementById("img");
+const clickerTwo = document.getElementById("upgrade1-secret");
+const amountOfParts = document.getElementById("aop");
 const switchClicker = document.getElementById("switch-clicker");
 switchClicker.addEventListener("click", () => {
   const clickerOne = document.getElementById("img");
@@ -15,10 +17,9 @@ switchClicker.addEventListener("click", () => {
   }
 });
 // make parts go up!
-
-const addClicks = () => {
-  const amountOfParts = document.getElementById("aop");
-  const clickerOne = document.getElementById("img");
+clickerOne.addEventListener("click", () => {
   const totalAmountOfParts = 0;
-};
-// save system
+  amountOfParts.textContent++;
+  totalAmountOfParts++;
+  console.log(totalAmountOfParts);
+});
