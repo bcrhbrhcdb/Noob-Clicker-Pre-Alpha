@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       totalAmountOfParts = savedGameData.totalAmountOfParts;
       upgrades = savedGameData.upgrades;
       amountOfParts.textContent = savedGameData.amountOfParts;
+      checkUpgrades(); // Add this line
     }
   }
 
@@ -90,6 +91,21 @@ document.addEventListener("DOMContentLoaded", function () {
   loadGame();
   checkUpgrades();
   setInterval(saveGame, 3000);
-});
 
-const resetButton = document.getElementById("reset");
+  const resetButton = document.getElementById("reset");
+
+  resetButton.addEventListener("click", () => {
+    if (confirm("Are you sure?")) {
+      if (confirm("Are you REALLY sure?")) {
+        amountOfParts.textContent = 0;
+        upgrades.forEach((upgrade) => (upgrade.owned = 0));
+        totalAmountOfParts = 0;
+        checkUpgrades();
+        saveGame();
+      }
+    }
+  });
+  console.log(setInterval(saveGame, 3000));
+  console.log(checkUpgrades);
+  console.log(loadGame);
+});
