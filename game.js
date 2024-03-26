@@ -2,32 +2,39 @@ const clickerOne = document.getElementById("img");
 const clickerTwo = document.getElementById("upgrade1-secret");
 const amountOfParts = document.getElementById("aop");
 const switchClicker = document.getElementById("switch-clicker");
-const upgrades = [
-  {
-    name: "noobling",
-    cost: 25,
-    gives: 2,
-    owned: 0,
-  },
-  {
-    name: "nooblit",
-    cost: 50,
-    gives: 12,
-    owned: 0,
-  },
-  {
-    name: "noob",
-    cost: 100,
-    gives: 20,
-    owned: 0,
-  },
-  {
-    name: "debug",
-    cost: 1,
-    gives: 0,
-    owned: 0,
-  },
+
+let totalAmountOfParts = 0;
+
+let upgrades = [
+  { name: "noobling", cost: 25, gives: 2, owned: 0 },
+  { name: "nooblit", cost: 50, gives: 12, owned: 0 },
+  { name: "noob", cost: 100, gives: 20, owned: 0 },
+  { name: "debug", cost: 1, gives: 0, owned: 0 },
 ];
+
+// Function to save current game state
+// Function to save current game state
+function saveGame() {
+  const gameData = {
+    totalAmountOfParts: totalAmountOfParts,
+    upgrades: upgrades,
+    amountOfParts: amountOfParts.textContent, // Save the amountOfParts text content
+  };
+  localStorage.setItem("gameData", JSON.stringify(gameData));
+}
+
+// Function to load saved game state
+function loadGame() {
+  const savedGameData = JSON.parse(localStorage.getItem("gameData"));
+  console.log(savedGameData);
+  if (savedGameData !== null) {
+    totalAmountOfParts = savedGameData.totalAmountOfParts;
+    upgrades = savedGameData.upgrades;
+    amountOfParts.textContent = savedGameData.amountOfParts;
+    // Restore the amountOfParts text content
+    checkUpgrades(); // Add this line to check upgrades after the game is loaded
+  }
+}
 
 switchClicker.addEventListener("click", () => {
   if (confirm("Are you sure?")) {
@@ -41,13 +48,10 @@ switchClicker.addEventListener("click", () => {
   }
 });
 
-let totalAmountOfParts = 0;
-
-// function to check and show upgrades
 function checkUpgrades() {
   upgrades.forEach((upgrade) => {
     let upgradeElem = document.getElementById(upgrade.name);
-    if (totalAmountOfParts >= upgrade.cost) {
+    if (totalAmountOfParts >= upgrade.cost || upgrade.owned > 0) {
       if (upgradeElem.style.display === "none") {
         upgradeElem.style.display = "block";
         setTimeout(function () {
@@ -64,23 +68,24 @@ function checkUpgrades() {
   });
 }
 
-// make parts go up!
 clickerOne.addEventListener("click", () => {
   amountOfParts.textContent++;
   totalAmountOfParts++;
-  checkUpgrades(); // check upgrades after each click
+  checkUpgrades();
 });
 
 clickerTwo.addEventListener("click", () => {
   amountOfParts.textContent++;
   totalAmountOfParts++;
-  checkUpgrades(); // check upgrades after each click
+  checkUpgrades();
 });
 
 window.onload = function () {
-  // initial check for upgrades
+  loadGame();
   checkUpgrades();
+  setInterval(saveGame, 30000);
 };
+
 let clicker = document.querySelector(".img");
 clicker.addEventListener("click", function () {
   clicker.classList.add("click-animation");
@@ -88,7 +93,7 @@ clicker.addEventListener("click", function () {
 clicker.addEventListener("animationend", function () {
   clicker.classList.remove("click-animation");
 });
-let clicker2 = document.getElementById("upgrade1-scret");
+let clicker2 = document.getElementById("upgrade1-secret");
 clicker2.addEventListener("click", function () {
   clicker2.classList.add("click-animation");
 });
