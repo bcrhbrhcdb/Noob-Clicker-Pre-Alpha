@@ -19,15 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
       amountOfParts: amountOfParts.textContent,
     };
     localStorage.setItem("gameData", JSON.stringify(gameData));
+    localStorage.setItem("upgrades", JSON.stringify(upgrades));
   }
 
   function loadGame() {
     const savedGameData = JSON.parse(localStorage.getItem("gameData"));
     if (savedGameData !== null) {
       totalAmountOfParts = savedGameData.totalAmountOfParts;
-      upgrades = savedGameData.upgrades;
+      upgrades = JSON.parse(localStorage.getItem("upgrades"));
       amountOfParts.textContent = savedGameData.amountOfParts;
-      checkUpgrades(); // Add this line
+      checkUpgrades();
     }
   }
 
@@ -46,16 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function checkUpgrades() {
     upgrades.forEach((upgrade) => {
       let upgradeElem = document.getElementById(upgrade.name);
-      if (totalAmountOfParts >= upgrade.cost || upgrade.owned > 0) {
-        if (upgradeElem.style.display === "none") {
-          upgradeElem.style.display = "block";
-          setTimeout(function () {
-            upgradeElem.style.animation = "slide-in 5s forwards";
-          }, 50);
-        }
-      } else {
-        upgradeElem.style.display = "none";
-        upgradeElem.style.animation = "";
+      if (
+        totalAmountOfParts >= upgrade.cost &&
+        upgradeElem.style.display !== "block"
+      ) {
+        upgradeElem.style.display = "block";
+        setTimeout(function () {
+          upgradeElem.style.animation = "slide-in 5s forwards";
+        }, 50);
       }
     });
   }
